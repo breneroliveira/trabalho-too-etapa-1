@@ -1,5 +1,4 @@
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -37,29 +36,29 @@ public class Atividade1 {
             }
             
             System.out.println("");
+            
+            if(salario <= 1100) {
+                aliquota = (float) ((salario * 7.5) / 100);
+                salarioLiquido = salario - aliquota;
+            } else if(salario >= 1100.01 && salario <= 2203.48) {
+                aliquota = (float) ((salario * 9) / 100);
+                salarioLiquido = salario - aliquota;
+            } else if(salario >= 2203.49 && salario <= 3305.22) {
+                aliquota = (float) ((salario * 12) / 100);
+                salarioLiquido = salario - aliquota;
+            } else if(salario >= 3305.23) {
+                aliquota = (float) ((salario * 14) / 100);
+                salarioLiquido = salario - aliquota;
+            }
+
+            System.out.println("Nome: " + nome);
+            System.out.println("Salário bruto (R$): " + salario);
+            System.out.println("INSS: " + aliquota);
+            System.out.println("Salário líquido (R$): " + salarioLiquido + "\n");
+        
        } catch(Exception e) {
            System.out.println("\nErro: " + e.getMessage() +
                               "\nClasse do Erro: " + e.getClass() + "\n");
-       } 
-       
-       if(salario <= 1100) {
-           aliquota = (float) ((salario * 7.5) / 100);
-           salarioLiquido = salario - aliquota;
-       } else if(salario >= 1100.01 && salario <= 2203.48) {
-           aliquota = (float) ((salario * 9) / 100);
-           salarioLiquido = salario - aliquota;
-       } else if(salario >= 2203.49 && salario <= 3305.22) {
-           aliquota = (float) ((salario * 12) / 100);
-           salarioLiquido = salario - aliquota;
-       //} else if(salario >= 3305.23 && salario <= 6433.57) {
-       } else if(salario >= 3305.23) {
-           aliquota = (float) ((salario * 14) / 100);
-           salarioLiquido = salario - aliquota;
        }
-       
-        System.out.println("Nome: " + nome);
-        System.out.println("Salário bruto (R$): " + salario);
-        System.out.println("INSS: " + aliquota);
-        System.out.println("Salário líquido (R$): " + salarioLiquido + "\n");
     }
 }
